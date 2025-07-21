@@ -1,0 +1,578 @@
+/* Importação de fonte do Google Fonts para um visual moderno */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Variáveis CSS para facilitar a manutenção e padronização */
+:root {
+    --bg-color: #1a1a1a; /* Fundo principal escuro */
+    --secondary-bg-color: #222222; /* Fundo para seções alternadas */
+    --card-bg-color: #2c2c2c; /* Fundo para cards e formulários */
+    --text-color: #f0f0f0; /* Cor do texto principal claro */
+    --light-text-color: #bbb; /* Texto secundário, mais suave */
+    --accent-color: #6a1b9a; /* Roxo vibrante para destaque */
+    --hover-accent-color: #9c27b0; /* Roxo mais claro no hover */
+    --key-base-color: #333; /* Cor base para as "teclas" de skills */
+    --key-shadow-color: rgba(0, 0, 0, 0.4); /* Sombra para profundidade das teclas */
+    --border-color: #333; /* Cor para bordas sutis */
+    --border-radius-sm: 5px;
+    --border-radius-md: 8px;
+    --transition-speed: 0.3s; /* Velocidade padrão para transições */
+    --shadow-light: rgba(0, 0, 0, 0.2);
+    --shadow-medium: rgba(0, 0, 0, 0.3);
+    --shadow-heavy: rgba(0, 0, 0, 0.5);
+}
+
+/* Reset básico e estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden; /* Previne rolagem horizontal indesejada */
+}
+
+html {
+    scroll-behavior: smooth; /* Habilita rolagem suave para links de âncora */
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--hover-accent-color);
+}
+
+/* -------------------- Cabeçalho (Navegação) -------------------- */
+.header {
+    width: 100%;
+    padding: 20px 40px;
+    position: fixed; /* Fixa o cabeçalho no topo da tela */
+    top: 0;
+    left: 0;
+    background-color: rgba(26, 26, 26, 0.8); /* Fundo semi-transparente */
+    backdrop-filter: blur(5px); /* Efeito de blur para o fundo */
+    z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Centraliza os links de navegação */
+    gap: 40px; /* Espaçamento entre os links */
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza a nav */
+}
+
+.nav-link {
+    font-weight: 600;
+    padding: 10px 15px;
+    color: var(--text-color);
+    border-radius: var(--border-radius-md);
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.nav-link:hover,
+.nav-link.active { /* 'active' pode ser adicionado via JS para a seção atual */
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* -------------------- Seções Principais e Títulos -------------------- */
+.main-content {
+    padding-top: 80px; /* Compensa a altura do cabeçalho fixo */
+}
+
+section {
+    padding: 80px 40px; /* Espaçamento interno padrão para as seções */
+    min-height: 100vh; /* Garante que cada seção ocupe a altura total da viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative; /* Base para posicionamento absoluto de elementos internos */
+    overflow: hidden; /* Esconde conteúdo que vaza */
+}
+
+h1, h2 {
+    font-size: 3.5em; /* Tamanho maior para títulos principais */
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2 {
+    color: var(--accent-color);
+    font-size: 2.8em;
+    margin-bottom: 40px;
+}
+
+/* -------------------- Seção Hero (Introdução) -------------------- */
+.hero-section {
+    background: linear-gradient(135deg, var(--bg-color), #2c2c2c); /* Degradê sutil */
+    padding-top: 0; /* Ajuste para min-height funcionar como esperado */
+    color: white; /* Garante que o texto seja branco */
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.hero-content h1 {
+    font-size: 4em;
+    line-height: 1.1;
+}
+
+.hero-content p {
+    font-size: 1.4em;
+    margin-bottom: 50px;
+    color: var(--light-text-color);
+}
+
+
+.bongo-cat {
+    /* ... outros estilos ... */
+    opacity: 0; /* Começa invisível */
+    transform: scale(0.8); /* Começa ligeiramente menor */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transição para aparecer/desaparecer */
+    position: absolute; /* Para posicionar livremente */
+    bottom: 20px; /* Ajuste a posição conforme o layout */
+    right: 50px; /* Ajuste a posição conforme o layout */
+    z-index: 5; /* Para que fique acima de outros elementos mas abaixo do texto da skill */
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* -------------------- Seção de Habilidades (Skills) -------------------- */
+.skills-section {
+    background-color: var(--secondary-bg-color);
+}
+
+.skills-section .hint {
+    font-size: 1em;
+    color: var(--light-text-color);
+    margin-bottom: 50px;
+    font-style: italic;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Colunas flexíveis */
+    gap: 20px; /* Espaçamento entre as teclas */
+    padding: 20px;
+    max-width: 1000px; /* Largura máxima da grade */
+    width: 100%;
+    position: relative; /* Para o texto de skill aparecer sobre */
+    perspective: 1000px; /* Para o efeito 3D nas teclas */
+}
+
+.skill-key {
+    width: 100px; /* Tamanho padrão de uma tecla */
+    height: 100px;
+    background-color: var(--key-base-color);
+    border-radius: var(--border-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative; /* Para o pseudo-elemento ::before */
+    box-shadow: 0 8px 0 var(--key-shadow-color), /* Sombra para dar profundidade (botão não pressionado) */
+                0 15px 25px var(--shadow-medium);
+    transition: transform 0.1s ease-out, box-shadow 0.1s ease-out, opacity 0.3s ease; /* Transição rápida para clique */
+    transform-style: preserve-3d; /* Permite rotação 3D dos filhos */
+    will-change: transform, box-shadow, opacity; /* Otimização de performance */
+}
+
+/* Pseudo-elemento para a parte "lateral" da tecla, dando volume */
+.skill-key::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(var(--key-base-color-rgb), 0.8); /* Cor levemente mais escura */
+    border-radius: var(--border-radius-md);
+    transform: translateZ(-10px); /* Move para trás no eixo Z */
+    box-shadow: 0 0 10px var(--shadow-light);
+    /* Nota: 'darken' não é CSS puro. Para simular, você precisaria de SCSS/LESS ou calcular a cor RGB */
+    /* Para este exemplo, vou usar um RGB hardcoded aproximado ou um tom mais escuro */
+    background-color: #2a2a2a; /* Um pouco mais escuro que a base */
+}
+
+.skill-key img {
+    width: 60%; /* Tamanho do ícone dentro da tecla */
+    height: 60%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2)); /* Brilho sutil no ícone */
+    position: relative; /* Para garantir que o ícone fique acima do ::before */
+    z-index: 2;
+}
+
+/* Efeito de "pressionar" a tecla (quando clicada) */
+.skill-key:active {
+    transform: translateY(5px) translateZ(-5px); /* Move para baixo e um pouco para trás */
+    box-shadow: 0 3px 0 var(--key-shadow-color), /* Sombra menor ao clicar */
+                0 5px 15px var(--shadow-light);
+}
+
+/* Cores específicas para algumas teclas (adapte as cores aos ícones) */
+.html-key { background-color: #e34c26; } /* Laranja */
+.css-key { background-color: #264de4; } /* Azul */
+.js-key { background-color: #f7df1e; } /* Amarelo */
+.react-key { background-color: #61dafb; } /* Azul claro */
+.node-key { background-color: #68a063; } /* Verde escuro */
+.python-key { background-color: #306998; } /* Azul acinzentado */
+.docker-key { background-color: #0db7ed; } /* Azul elétrico */
+.aws-key { background-color: #ff9900; } /* Laranja AWS */
+.git-key { background-color: #f05033; } /* Vermelho alaranjado */
+.ts-key { background-color: #007acc; } /* Azul TypeScript */
+.sql-key { background-color: #a8a8a8; } /* Cinza */
+
+
+/* Estilo para o texto da skill que aparece */
+.skill-text-display {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: none; /* Centraliza perfeitamente */
+    margin-bottom: 30px;
+    background-color: rgba(0, 0, 0, 0.85); /* Fundo semi-transparente */
+    padding: 20px 30px;
+    border-radius: var(--border-radius-md);
+    color: white;
+    font-size: 1.5em;
+    font-weight: 600;
+    white-space: nowrap; /* Impede que o texto quebre linha */
+    opacity: 0; /* Começa invisível */
+    pointer-events: none; /* Garante que não bloqueie cliques */
+    transition: opacity 0.3s ease-in-out;
+    z-index: 10; /* Acima das teclas */
+    text-shadow: 0 0 8px var(--shadow-heavy);
+    min-width: 350px; /* Garante largura mínima */
+    box-shadow: 0 0 25px var(--shadow-heavy);
+    backdrop-filter: blur(3px); /* Efeito de blur no fundo do texto */
+}
+
+.skill-text-display.active {
+    opacity: 1; /* Torna-o visível */
+}
+
+/* Efeito das "teclas" se afastando quando o texto da skill é exibido */
+.skills-grid.text-active .skill-key {
+    transform: scale(0.8) translateY(-50px) rotateX(10deg) !important; /* Exemplo de movimento */
+    opacity: 0.2;
+    pointer-events: none; /* Desabilita clique nas teclas */
+}
+/* Reverte a transformação para a tecla clicada, mantendo o efeito de "pressionada" */
+.skills-grid.text-active .skill-key.pressed {
+    transform: translateY(5px) translateZ(-5px) !important; /* Volta a simular o pressionar */
+    opacity: 1 !important; /* Garante que a tecla pressionada ainda esteja visível */
+    box-shadow: 0 3px 0 var(--key-shadow-color),
+                0 5px 15px var(--shadow-light) !important;
+}
+
+
+/* -------------------- Seção de Projetos -------------------- */
+.projects-section {
+    background-color: var(--bg-color); /* Fundo da seção de projetos */
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas para os cards */
+    gap: 30px; /* Espaçamento entre os cards */
+    max-width: 1200px;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.project-card {
+    background-color: var(--card-bg-color);
+    padding: 25px;
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 5px 15px var(--shadow-medium);
+    text-align: left;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empurra o link para baixo */
+    min-height: 220px; /* Altura mínima para alinhamento visual */
+}
+
+.project-card:hover {
+    transform: translateY(-8px); /* Efeito de elevação sutil */
+    box-shadow: 0 10px 25px var(--shadow-heavy);
+}
+
+.project-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 8px;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.project-card p {
+    font-size: 1em;
+    color: var(--light-text-color);
+    margin-bottom: 20px;
+    flex-grow: 1; /* Faz o parágrafo ocupar o máximo de espaço */
+}
+
+.project-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: var(--border-radius-sm);
+    font-size: 1em;
+    font-weight: 600;
+    align-self: flex-start; /* Alinha o link à esquerda dentro do card */
+    transition: background-color var(--transition-speed) ease;
+}
+
+.project-link:hover {
+    background-color: var(--hover-accent-color);
+}
+
+/* -------------------- Seção de Contato -------------------- */
+.contact-section {
+    background-color: var(--secondary-bg-color);
+    padding-bottom: 80px; /* Mais espaço no final da seção */
+}
+
+.contact-section p {
+    margin-bottom: 40px;
+    max-width: 700px;
+    font-size: 1.1em;
+    color: var(--light-text-color);
+}
+
+.contact-section p a {
+    font-weight: 600;
+}
+
+.contact-form {
+    background-color: var(--card-bg-color);
+    padding: 40px;
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 5px 15px var(--shadow-medium);
+    width: 100%;
+    max-width: 700px;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 1.1em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: #3a3a3a; /* Fundo mais escuro para inputs */
+    border: 1px solid #555;
+    border-radius: var(--border-radius-sm);
+    color: var(--text-color);
+    font-size: 1em;
+    outline: none; /* Remove a borda de foco padrão do navegador */
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 4px rgba(106, 27, 154, 0.4); /* Brilho no foco */
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 120px;
+}
+
+.send-message-btn {
+    display: block;
+    width: auto; /* Adapta-se ao conteúdo */
+    padding: 15px 30px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+    margin-top: 30px;
+}
+
+.send-message-btn:hover {
+    background-color: var(--hover-accent-color);
+    transform: translateY(-3px); /* Pequeno efeito de elevação */
+    box-shadow: 0 5px 15px var(--shadow-medium);
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 50px;
+    display: flex;
+    gap: 20px; /* Espaçamento entre os ícones */
+}
+
+.social-links a {
+    display: inline-flex; /* Use flexbox para centralizar o ícone */
+    width: 48px;
+    height: 48px;
+    background-color: #3a3a3a;
+    border-radius: 50%; /* Torna-os círculos */
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    box-shadow: 0 2px 5px var(--shadow-light);
+}
+
+.social-links a:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-5px); /* Efeito de elevação maior */
+    box-shadow: 0 8px 15px var(--shadow-medium);
+}
+
+.social-links img {
+    width: 28px;
+    height: 28px;
+    filter: invert(1); /* Deixa os ícones brancos se forem escuros */
+}
+
+/* -------------------- Rodapé -------------------- */
+.footer {
+    padding: 25px;
+    background-color: #0d0d0d; /* Fundo bem escuro para o rodapé */
+    text-align: center;
+    font-size: 0.9em;
+    color: #888;
+    border-top: 1px solid var(--border-color);
+}
+
+/* -------------------- Responsividade -------------------- */
+@media (max-width: 1024px) {
+    h1 { font-size: 3.5em; }
+    h2 { font-size: 2.5em; }
+    .hero-content p { font-size: 1.2em; }
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        gap: 15px;
+    }
+    .skill-key {
+        width: 90px;
+        height: 90px;
+    }
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .header { padding: 15px 20px; }
+    .navbar {
+        gap: 20px;
+        flex-wrap: wrap; /* Permite quebrar linha para os links */
+        font-size: 0.9em;
+    }
+    h1 { font-size: 3em; }
+    h2 { font-size: 2.2em; }
+    section { padding: 60px 20px; }
+    .hero-content p { font-size: 1.1em; }
+    .bongo-cat { width: 150px; }
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+        gap: 12px;
+    }
+    .skill-key {
+        width: 75px;
+        height: 75px;
+    }
+    .skill-text-display {
+        font-size: 1.2em;
+        padding: 15px 20px;
+        min-width: 300px;
+    }
+    .skills-grid.text-active .skill-key {
+        transform: scale(0.7) translateY(-40px) rotateX(8deg) !important;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+    .project-card { padding: 20px; }
+    .contact-form { padding: 30px; }
+    .form-group label { font-size: 1em; }
+    .form-group input, .form-group textarea { padding: 12px; }
+    .send-message-btn { padding: 12px 25px; font-size: 1.1em; }
+    .social-links a { width: 42px; height: 42px; }
+    .social-links img { width: 22px; height: 22px; }
+}
+
+@media (max-width: 480px) {
+    .header { padding: 10px 15px; }
+    .navbar {
+        font-size: 0.8em;
+        gap: 15px;
+        justify-content: space-between;
+    }
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 1.8em; margin-bottom: 30px;}
+    section { padding: 40px 15px; }
+    .hero-content p { font-size: 1em; }
+    .bongo-cat { width: 120px; }
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        gap: 8px;
+    }
+    .skill-key {
+        width: 60px;
+        height: 60px;
+        box-shadow: 0 5px 0 var(--key-shadow-color), 0 10px 15px var(--shadow-medium);
+    }
+    .skill-key::before { transform: translateZ(-8px); }
+    .skill-key:active {
+        transform: translateY(3px) translateZ(-3px);
+        box-shadow: 0 2px 0 var(--key-shadow-color), 0 3px 10px var(--shadow-light);
+    }
+    .skill-text-display {
+        font-size: 1em;
+        padding: 12px 18px;
+        min-width: 200px;
+    }
+    .skills-grid.text-active .skill-key {
+        transform: scale(0.6) translateY(-30px) rotateX(5deg) !important;
+    }
+    .project-card { padding: 15px; }
+    .project-card h3 { font-size: 1.2em; }
+    .project-card p { font-size: 0.9em; }
+    .project-link { padding: 8px 15px; font-size: 0.9em; }
+    .contact-form { padding: 25px; }
+    .send-message-btn { font-size: 1em; padding: 10px 20px; }
+    .social-links { gap: 10px; }
+    .social-links a { width: 36px; height: 36px; }
+    .social-links img { width: 18px; height: 18px; }
+}

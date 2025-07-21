@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projetos</a>
+            <a href="#contact" class="nav-link">Contato</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1>Olá, sou João Pedro!</h1>
+                <p>Desenvolvedor Front-End apaixonado por criar experiências incríveis na web.</p>
+                <img src="assets/img/bongo-cat.gif" alt="Bongo Cat Animado" class="bongo-cat">
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section">
+            <h2>SKILLS</h2>
+            <p class="hint"> (dica: pressione uma tecla) </p>
+
+            <div class="skill-text-display"></div>
+            
+            <div class="skills-grid">
+                
+                <div class="skill-key html-key" data-skill-text="HTML: O avô da internet, ainda arrasando!">
+                    <img src="assets/img/html-5.png" alt="HTML5 Icon">
+                </div>
+                <div class="skill-key css-key" data-skill-text="CSS: A pílula de chill para o seu frontend, diferente!">
+                    <img src="assets/img/css-3.png" alt="CSS3 Icon">
+                </div>
+                <div class="skill-key js-key" data-skill-text="JS: Desenvolvendo com o melhor drip, sem limites!">
+                    <img src="assets/img/java-script.png" alt="JavaScript Icon">
+                </div>
+    
+                <div class="skill-key git-key" data-skill-text="Git: Controle de versão que facilita a vida.">
+                    <img src="assets/img/social.png" alt="Git Icon">
+                </div>
+
+                <div class="skill-key sql-key" data-skill-text="SQL: Linguagem para gerenciar bancos de dados.">
+                    <img src="assets/img/database.png" alt="SQL Icon">
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <h2>PROJETOS</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>AI Dockarfile Optimizer</h3>
+                    <p>AI and DevOps</p>
+                    <a href="#" target="_blank" class="project-link">Ver Projeto</a>
+                </div>
+                <div class="project-card">
+                    <h3>FinanceMe: Complete DevOps Capstone Project</h3>
+                    <p>Building CI/CD and Finance App</p>
+                    <a href="#" target="_blank" class="project-link">Ver Projeto</a>
+                </div>
+                <div class="project-card">
+                    <h3>Smart Parking Assistant</h3>
+                    <p>IoT</p>
+                    <a href="#" target="_blank" class="project-link">Ver Projeto</a>
+                </div>
+                <div class="project-card">
+                    <h3>Smart Job Tracker</h3>
+                    <p>Full-stack</p>
+                    <a href="#" target="_blank" class="project-link">Ver Projeto</a>
+                </div>
+                <div class="project-card">
+                    <h3>My Portfolio</h3>
+                    <p>Portfólio</p>
+                    <a href="#" target="_blank" class="project-link">Ver Projeto</a>
+                </div>
+                <div class="project-card">
+                    <h3>Savinder Puri Portfolio</h3>
+                    <p>World's most loved DevOps and Spiritual Guru</p>
+                    <a href="#" target="_blank" class="project-link">Ver Projeto</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Contato</h2>
+            <p>Por favor, entre em contato diretamente pelo email <a href="mailto:devjhon19@gmail.com">devjhon19@gmail.com</a> ou preencha o formulário abaixo:</p>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Seu Nome</label>
+                    <input type="text" id="name" name="name" placeholder="Seu Nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Endereço de E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Sua Mensagem</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Fale-me sobre seu projeto, ou algo mais. Pinky promise!" required></textarea>
+                </div>
+                <button type="submit" class="send-message-btn">Enviar Mensagem &gt;</button>
+            </form>
+            <div class="social-links">
+                <a href="www.linkedin.com/in/joão-pedro-lacerda-0aa030279" target="_blank" aria-label="LinkedIn"><img src="assets/img/linkedin-original.svg" alt="LinkedIn"></a>
+                <a href="#" target="_blank" aria-label="GitHub"><img src="assets/img/github-original.svg" alt="GitHub"></a>
+
+                <a href="#" target="_blank" aria-label="Instagram"><img src="assets/img/instagram.png" alt="Instagram"></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 [Seu Nome]. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
