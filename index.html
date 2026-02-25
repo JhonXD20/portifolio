@@ -1,127 +1,315 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
+    <title>Currículo - John Wick</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    </head>
+    
+    <style>
+        :root {
+            --bg-color: #0d121f;
+            --text-main: #ffffff;
+            --text-muted: #8b95a5;
+            --accent-color: #6330ff;
+            --tag-bg: #303b4e;
+            --line-color: #2a3447;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            /* Gradiente roxo no topo */
+            background-image: radial-gradient(circle at 50% -20%, rgba(99, 48, 255, 0.4) 0%, var(--bg-color) 40%);
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .resume-container {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            background-color: #2a3447; /* Fallback */
+        }
+
+        .name {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .title-badge {
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--line-color);
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item i {
+            color: var(--accent-color);
+            font-size: 16px;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .left-col {
+            border-right: 1px solid var(--line-color);
+            padding-right: 40px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+
+        .section-title:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* TIMELINE (Educação e Experiência) */
+        .timeline-item {
+            margin-bottom: 20px;
+        }
+
+        .timeline-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--text-main);
+        }
+
+        .timeline-subtitle {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .timeline-subtitle i {
+            color: var(--accent-color);
+            font-size: 10px;
+            margin-top: 4px;
+        }
+
+        /* SKILLS & TOOLS */
+        .skill-category {
+            margin-bottom: 25px;
+        }
+
+        .skill-category-title {
+            font-size: 13px;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background-color: var(--tag-bg);
+            color: var(--text-muted);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        /* Responsividade Básica */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            .left-col {
+                border-right: none;
+                padding-right: 0;
+                border-bottom: 1px solid var(--line-color);
+                padding-bottom: 30px;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
 <body>
 
-    <header class="header">
-        <nav class="navbar">
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#skills" class="nav-link">Skills</a>
-            <a href="#projects" class="nav-link">Projetos</a>
-            <a href="#contact" class="nav-link">Contato</a>
-        </nav>
-    </header>
+    <div class="resume-container">
+        <header class="header">
+            <img src="assets/img/perfil-curriculo.png" alt="João Pedro Lacerda" class="profile-img">
+            <h1 class="name">João Pedro Lacerda</h1>
+            <div class="title-badge">Front-end Developer</div>
 
-    <main class="main-content">
-        <section id="home" class="hero-section">
-            <div class="hero-content">
-                <h1>Olá, sou João Pedro!</h1>
-                <p>Desenvolvedor Front-End apaixonado por criar experiências incríveis na web.</p>
-                <img src="assets/img/bongo-cat.gif" alt="Bongo Cat Animado" class="bongo-cat">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>devjhon19@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-crosshairs"></i>
+                    <span>Porto Nacional, Tocantins</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>(63) 99111-9972</span>
+                </div>
             </div>
-        </section>
+        </header>
+        <div class="about">
+                <h2 class="section-title">Sobre mim</h2>
+                <p>Olá! Muito prazer, sou o João Pedro, mas fiquem à vontade para me chamar de Jhonn. 
+                <p>Sou acadêmico de Sistemas de Informação em Porto Nacional - TO e possuo um background sólido como técnico em informática e manutenção de celulares. Atualmente, estou em fase de transição de carreira para a área de desenvolvimento de software, um campo ao qual já dedico meu tempo e estudos diários. Tenho experiência prática na construção de interfaces e páginas web utilizando HTML, CSS, JavaScript, PHP e Laravel, além de facilidade na criação de soluções ágeis com WordPress e Elementor.</p> 
+                <p>Minha vivência técnica vai além do código: já atuei integrando hardware e desenvolvimento web, como no projeto dos totens interativos no Memorial Heróis do Tocantins, o que me trouxe uma visão completa sobre como a tecnologia interage com o usuário final. Sou movido por novos desafios, não tenho medo de sair da zona de conforto e possuo facilidade para aprender. Entro de cabeça nas missões que me são designadas e procuro sempre entregar o melhor resultado possível. Estou em busca de uma oportunidade para provar meu valor na área de desenvolvimento e agregar ao seu time!</p>
+            </div>
 
-        <section id="skills" class="skills-section">
-            <h2>SKILLS</h2>
-            <p class="hint"> (dica: pressione uma tecla) </p>
-
-            <div class="skill-text-display"></div>
+        <main class="main-content">
             
-            <div class="skills-grid">
+            <div class="left-col">
                 
-                <div class="skill-key html-key" data-skill-text="HTML: O avô da internet, ainda arrasando!">
-                    <img src="assets/img/html-5.png" alt="HTML5 Icon">
-                </div>
-                <div class="skill-key css-key" data-skill-text="CSS: A pílula de chill para o seu frontend, diferente!">
-                    <img src="assets/img/css-3.png" alt="CSS3 Icon">
-                </div>
-                <div class="skill-key js-key" data-skill-text="JS: Desenvolvendo com o melhor drip, sem limites!">
-                    <img src="assets/img/java-script.png" alt="JavaScript Icon">
-                </div>
-    
-                <div class="skill-key git-key" data-skill-text="Git: Controle de versão que facilita a vida.">
-                    <img src="assets/img/social.png" alt="Git Icon">
+
+                <h2 class="section-title">Formação</h2>
+                <div class="timeline-item">
+                    <div class="timeline-title">IFTO - Campus Porto Nacional</div>
+                    <div class="timeline-subtitle">
+                        <i class="fa-solid fa-square"></i>
+                        <span>Sistemas de Informação (Cursando 7º período)</span>
+                    </div>
+                    <div class="timeline-title">IFTO - Campus Porto Nacional</div>
+                    <div class="timeline-subtitle">
+                        <i class="fa-solid fa-square"></i>
+                        <span>Técnico em Informática</span>
+                    </div>
+                    
                 </div>
 
-                <div class="skill-key sql-key" data-skill-text="SQL: Linguagem para gerenciar bancos de dados.">
-                    <img src="assets/img/database.png" alt="SQL Icon">
+                <h2 class="section-title">Experiência</h2>
+                <div class="timeline-item">
+                    <div class="timeline-title">Sistema web moderno de suporte a Secretaria de Cultura de Porto Nacional - TO</div>
+                    <div class="timeline-subtitle">
+                        <i class="fa-solid fa-square"></i>
+                        <span>Desenvolvimento de um sistema web para a Secretaria de Cultura do município de Porto Nacional - TO, com foco em agilidade e usabilidade.</span>
+                    </div>
                 </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-title">Invent</div>
+                    <div class="timeline-subtitle">
+                        <i class="fa-solid fa-square"></i>
+                        <span>Desenvolvimento de um sistema web para o Instituto Federal do Tocantins (IFTO - Campus Porto Nacional). Esse projeto envolveu o desenvolvimento de uma plataforma completa com funcionalidades avançadas de gerenciamento do patrimonio publico da instituição.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-col">
+                <h2 class="section-title">Skills & Ferramentas</h2>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">Designing Softwares</div>
+                    <div class="tags-container">
+                        <span class="tag">Figma</span>
+                        <span class="tag">CorelDraw</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">Linguagens</div>
+                    <div class="tags-container">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">Laravel</span>
+                        
+                    </div>
+                </div>                
                 
+                <div class="skill-category">
+                    <div class="skill-category-title">Ferramentas</div>
+                    <div class="tags-container">
+                        <span class="tag">Visual Studio Code</span>
+                        <span class="tag">Android Studio</span>
+                        <span class="tag">WordPress</span>
+                        <span class="tag">GitHub</span>
+                        <span class="tag">Git</span> 
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">Idiomas</div>
+                    <div class="tags-container">
+                        <span class="tag">Inglês - Básico 2</span>
+                        <span class="tag">Espanhol - Básico 1</span>
+                        <span class="tag">Libras</span> 
+                    </div>
+                </div>
+
             </div>
-        </section>
+        </main>
+    </div>
 
-        <section id="projects" class="projects-section">
-            <h2>PROJETOS</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>AI Dockarfile Optimizer</h3>
-                    <p>AI and DevOps</p>
-                    <a href="#" target="_blank" class="project-link">Ver Projeto</a>
-                </div>
-                <div class="project-card">
-                    <h3>FinanceMe: Complete DevOps Capstone Project</h3>
-                    <p>Building CI/CD and Finance App</p>
-                    <a href="#" target="_blank" class="project-link">Ver Projeto</a>
-                </div>
-                <div class="project-card">
-                    <h3>Smart Parking Assistant</h3>
-                    <p>IoT</p>
-                    <a href="#" target="_blank" class="project-link">Ver Projeto</a>
-                </div>
-                <div class="project-card">
-                    <h3>Smart Job Tracker</h3>
-                    <p>Full-stack</p>
-                    <a href="#" target="_blank" class="project-link">Ver Projeto</a>
-                </div>
-                <div class="project-card">
-                    <h3>My Portfolio</h3>
-                    <p>Portfólio</p>
-                    <a href="#" target="_blank" class="project-link">Ver Projeto</a>
-                </div>
-                <div class="project-card">
-                    <h3>Savinder Puri Portfolio</h3>
-                    <p>World's most loved DevOps and Spiritual Guru</p>
-                    <a href="#" target="_blank" class="project-link">Ver Projeto</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact-section">
-            <h2>Contato</h2>
-            <p>Por favor, entre em contato diretamente pelo email <a href="mailto:devjhon19@gmail.com">devjhon19@gmail.com</a> ou preencha o formulário abaixo:</p>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Seu Nome</label>
-                    <input type="text" id="name" name="name" placeholder="Seu Nome" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Endereço de E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Sua Mensagem</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Fale-me sobre seu projeto, ou algo mais. Pinky promise!" required></textarea>
-                </div>
-                <button type="submit" class="send-message-btn">Enviar Mensagem &gt;</button>
-            </form>
-            <div class="social-links">
-                <a href="www.linkedin.com/in/joão-pedro-lacerda-0aa030279" target="_blank" aria-label="LinkedIn"><img src="assets/img/linkedin-original.svg" alt="LinkedIn"></a>
-                <a href="#" target="_blank" aria-label="GitHub"><img src="assets/img/github-original.svg" alt="GitHub"></a>
-
-                <a href="#" target="_blank" aria-label="Instagram"><img src="assets/img/instagram.png" alt="Instagram"></a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <p>&copy; 2025 [Seu Nome]. Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="assets/js/script.js"></script>
 </body>
 </html>
