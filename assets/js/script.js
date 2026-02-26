@@ -1,54 +1,20 @@
-const skillKeys = document.querySelectorAll('.skill-key');
-const skillTextDisplay = document.querySelector('.skill-text-display');
-const skillGrid = document.querySelector('.skills-grid');
-const bongoCat = document.querySelector('.bongo-cat');
-const navlinks = document.querySelectorAll('.nav-link');
+// função de carrossel
+const btnNext = document.getElementById('btn-next');
+const btnPrev = document.getElementById('btn-prev');
 
-let skillTimeout;
-let bongoCatTimeout;
-
-skillKeys.forEach(key => {
-    key.addEventListener('click', () => {
-        clearTimeout(skillTimeout);
-        clearTimeout(bongoCatTimeout);
-
-        const skillText = key.dataset.skillText;
-        skillTextDisplay.textContent = skillText;
-        skillTextDisplay.classList.add('active');
-
-        skillGrid.classList.add('text-active');
-        skillKeys.forEach(k => k.classList.remove('pressed'));
-        key.classList.add('pressed');
-
-        skillTimeout = setTimeout(() => {
-            skillTextDisplay.classList.remove('active');
-            skillGrid.classList.remove('text-active');
-            skillKeys.forEach(k => k.classList.remove('pressed'));
-        }, 3000);
-
-        bongoCat.style.opacity = '1';
-        bongoCat.style.transform = 'scale(1)';
-
-        bongoCatTimeout = setTimeout(() => {
-            bongoCat.style.opacity = '0';
-            bongoCat.style.transform = 'scale(0.8)';
-        }, 3000);
+// Avançar
+btnNext.addEventListener('click', () => {
+    // clientWidth pega a largura visível do carrossel na tela
+    carrossel.scrollBy({ 
+        left: carrossel.clientWidth, 
+        behavior: 'smooth' 
     });
 });
 
-navlinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-
-        if (targetSection) {
-            targetSection.scrollIntoView({
-                behavior: 'smooth'
-            });
-
-            navlinks.forEach(item => item.classList.remove('active'));
-            this.classList.add('active');
-        }
+// Voltar
+btnPrev.addEventListener('click', () => {
+    carrossel.scrollBy({ 
+        left: -carrossel.clientWidth, 
+        behavior: 'smooth' 
     });
 });
