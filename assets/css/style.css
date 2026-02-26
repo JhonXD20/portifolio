@@ -19,7 +19,7 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             /* Gradiente roxo no topo */
-            background-image: radial-gradient(circle at 50% -20%, rgba(99, 48, 255, 0.4) 0%, var(--bg-color) 40%);
+            background-image: radial-gradient(circle at 50% -20%, rgba(156, 34, 159, 0.4) 0%, var(--bg-color) 40%);
             background-repeat: no-repeat;
             min-height: 100vh;
             display: flex;

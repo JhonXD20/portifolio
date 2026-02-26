@@ -3,198 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículo - João Pedro Lacerda</title>
+    <title>Portifólio - João Pedro Lacerda</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    
-    <style>
-        :root {
-            --bg-color: #0d121f;
-            --text-main: #ffffff;
-            --text-muted: #8b95a5;
-            --accent-color: #6330ff;
-            --tag-bg: #303b4e;
-            --line-color: #2a3447;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            /* Gradiente roxo no topo */
-            background-image: radial-gradient(circle at 50% -20%, rgba(99, 48, 255, 0.4) 0%, var(--bg-color) 40%);
-            background-repeat: no-repeat;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            padding: 40px 20px;
-        }
-
-        .resume-container {
-            width: 100%;
-            max-width: 800px;
-        }
-
-        /* HEADER */
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-            background-color: #2a3447; /* Fallback */
-        }
-
-        .name {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .title-badge {
-            background-color: var(--accent-color);
-            color: #fff;
-            padding: 8px 20px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 500;
-            display: inline-block;
-            margin-bottom: 30px;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--line-color);
-            color: var(--text-muted);
-            font-size: 14px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .contact-item i {
-            color: var(--accent-color);
-            font-size: 16px;
-        }
-
-        /* MAIN CONTENT */
-        .main-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 30px;
-        }
-
-        .left-col {
-            border-right: 1px solid var(--line-color);
-            padding-right: 40px;
-        }
-
-        .section-title {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            margin-top: 30px;
-        }
-
-        .section-title:first-child {
-            margin-top: 0;
-        }
-
-        p {
-            color: var(--text-muted);
-            font-size: 13px;
-            line-height: 1.6;
-        }
-
-        /* TIMELINE (Educação e Experiência) */
-        .timeline-item {
-            margin-bottom: 20px;
-        }
-
-        .timeline-title {
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 5px;
-            color: var(--text-main);
-        }
-
-        .timeline-subtitle {
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            color: var(--text-muted);
-            font-size: 13px;
-        }
-
-        .timeline-subtitle i {
-            color: var(--accent-color);
-            font-size: 10px;
-            margin-top: 4px;
-        }
-
-        /* SKILLS & TOOLS */
-        .skill-category {
-            margin-bottom: 25px;
-        }
-
-        .skill-category-title {
-            font-size: 13px;
-            color: var(--text-main);
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-
-        .tags-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .tag {
-            background-color: var(--tag-bg);
-            color: var(--text-muted);
-            padding: 6px 14px;
-            border-radius: 6px;
-            font-size: 13px;
-        }
-
-        /* Responsividade Básica */
-        @media (max-width: 768px) {
-            .main-content {
-                grid-template-columns: 1fr;
-            }
-            .left-col {
-                border-right: none;
-                padding-right: 0;
-                border-bottom: 1px solid var(--line-color);
-                padding-bottom: 30px;
-            }
-            .contact-info {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-    </style>
+    <link rel="icon" href="assets/img/logo.png" type="image/x-icon">
 </head>
 <body>
 
@@ -307,54 +120,54 @@
 
             </div>
         </main>
-           <h2 class="section-title">Projetos</h2>
+            <h2 class="section-title">Projetos</h2>
 
-<div class="carrossel-wrapper">
-    
-    <button class="btn-nav btn-prev" id="btn-prev">❮</button>
+            <div class="carrossel-wrapper">
+                
+                <button class="btn-nav btn-prev" id="btn-prev">❮</button>
 
-    <div class="carrossel-container" id="carrossel">
-        <div class="card">
-            <a href="http://">
-                <h3>Sistema de Totens Interativos</h3>
-                <img src="assets/img/projetos/totens.png" alt="Totens" class="card-img">
-            </a>
-        </div>
-        <div class="card">
-            <a href="http://">
-                <h3>Landing page</h3>
-                <img src="assets/img/projetos/landing-page.png" alt="Landing" class="card-img">
-            </a>
-        </div>
-        <div class="card">
-            <a href="http://">
-                <h3>Efeito Paralax</h3>
-                <img src="assets/img/projetos/baloes.png" alt="Efeito Paralax" class="card-img">
-            </a>
-        </div>
-        <div class="card">
-            <a href="http://">
-                <h3>Projeto Batman</h3>
-                <img src="assets/img/projetos/batman.png" alt="Batman" class="card-img">
-            </a>
-        </div>
-        <div class="card">
-            <a href="http://">
-                <h3>Justly</h3>
-                <img src="assets/img/projetos/jusly.png" alt="Justly" class="card-img">
-            </a>
-        </div>
-        <div class="card">
-            <a href="http://">
-                <h3>Tec Blog</h3>
-                <img src="assets/img/projetos/tecblog.png" alt="Tec Blog" class="card-img">
-            </a>
-        </div>
-    </div>
+                <div class="carrossel-container" id="carrossel">
+                    <div class="card">
+                        <a href="http://">
+                            <h3>Sistema de Totens Interativos</h3>
+                            <img src="assets/img/projetos/totens.png" alt="Totens" class="card-img">
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="http://">
+                            <h3>Landing page</h3>
+                            <img src="assets/img/projetos/landing-page.png" alt="Landing" class="card-img">
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="http://">
+                            <h3>Efeito Paralax</h3>
+                            <img src="assets/img/projetos/baloes.png" alt="Efeito Paralax" class="card-img">
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="http://">
+                            <h3>Projeto Batman</h3>
+                            <img src="assets/img/projetos/batman.png" alt="Batman" class="card-img">
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="http://">
+                            <h3>Justly</h3>
+                            <img src="assets/img/projetos/jusly.png" alt="Justly" class="card-img">
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="http://">
+                            <h3>Tec Blog</h3>
+                            <img src="assets/img/projetos/tecblog.png" alt="Tec Blog" class="card-img">
+                        </a>
+                    </div>
+                </div>
 
-    <button class="btn-nav btn-next" id="btn-next">❯</button>
+                <button class="btn-nav btn-next" id="btn-next">❯</button>
 
-</div>
+            </div>
                 
                 
     </div>
