@@ -122,7 +122,7 @@ p {
     line-height: 1.6;
 }
 
-/* TIMELINE (Educação e Experiência) */
+/* Formação */
 .timeline-item {
     margin-bottom: 20px;
 }
@@ -190,6 +190,7 @@ p {
     overflow-x: auto;
     padding-bottom: 10px;
     width: 100%;
+    margin-bottom: 50px;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
 }
@@ -258,6 +259,89 @@ p {
 
 .btn-prev { left: -20px; } /* Ajustado para caber melhor em telas médias */
 .btn-next { right: -20px; }
+
+
+/* Contato */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaço entre os campos */
+    margin-top: 20px;
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Estilo das etiquetas (Nome, E-mail, Mensagem) */
+.input-group label {
+    font-size: 14px;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+/* Estilo das caixas de texto */
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: transparent; /* Fundo transparente para combinar com o tema */
+    border: 1px solid var(--line-color);
+    border-radius: 8px;
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Cor do texto de exemplo (placeholder) */
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: var(--text-muted);
+}
+
+/* Efeito quando o usuário clica no campo para digitar */
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(99, 48, 255, 0.15); /* Um brilho suave em volta */
+}
+
+/* Evita que o usuário redimensione a caixa de texto horizontalmente */
+.input-group textarea {
+    resize: vertical; 
+}
+
+/* Estilo do botão de enviar */
+.btn-submit {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+/* Efeito ao passar o mouse no botão */
+.btn-submit:hover {
+    background-color: #5025d1; /* Um roxo um pouco mais escuro */
+    transform: translateY(-2px); /* Dá uma leve levantada no botão */
+}
+
+/* Efeito ao clicar no botão */
+.btn-submit:active {
+    transform: translateY(0);
+}
 
 
 @media (min-width: 591px) {
