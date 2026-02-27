@@ -174,10 +174,7 @@ p {
     font-size: 13px;
 }
 
-
-/* =========================================
-   CARROSSEL DE PROJETOS (MOBILE FIRST)
-   ========================================= */
+/* Carrossel */
 
 .carrossel-wrapper {
     position: relative;
@@ -192,10 +189,7 @@ p {
     gap: 20px;
     overflow-x: auto;
     padding-bottom: 10px;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
     width: 100%;
-    
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
 }
@@ -204,16 +198,13 @@ p {
     display: none; /* Chrome, Safari e Opera */
 }
 
-/* Estilo Base dos Cards (Mobile: 1 por vez) */
+
 .card {
     background-color: var(--tag-bg);
     padding: 20px;
     border-radius: 10px;
     color: var(--text-main);
-    
-    /* 1 card ocupando 100% no celular */
     flex: 0 0 100%; 
-    scroll-snap-align: center; /* Centraliza no celular */
     transition: transform 0.3s ease;
 }
 
@@ -269,7 +260,6 @@ p {
 .btn-next { right: -20px; }
 
 
-/* Ajustes gerais do layout e Carrossel para Tablets */
 @media (min-width: 591px) {
     .card {
         flex: 0 0 calc((100% - 20px) / 2); 
