@@ -209,6 +209,28 @@ p {
     transition: transform 0.3s ease;
 }
 
+/* ribbon for brief cards */
+.card.breve {
+    position: relative;
+    overflow: hidden;
+}
+
+.card.breve::after {
+    content: "Em breve";
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    width: 200%;
+    background-color: red;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 14px;
+    font-weight: 700;
+    transform: rotate(39deg);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
 .card:hover {
     transform: scale(1.03); 
 }
@@ -343,6 +365,27 @@ p {
     transform: translateY(0);
 }
 
+/* Footer e social mediaa */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid var(--line-color);
+    margin-top: 40px;
+}
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 15px;
+}
+.media {
+    color: var(--text-muted);
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 
 @media (min-width: 591px) {
     .card {
